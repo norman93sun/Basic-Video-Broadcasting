@@ -18,6 +18,9 @@
 		0790F1511D1E9631003F8C18 /* VideoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790F1501D1E9631003F8C18 /* VideoSession.swift */; };
 		78E8046273FC5C7CC4D9AD2A /* Pods_OpenLive_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFC752A3BBFD2D25F5B7D21 /* Pods_OpenLive_Tests.framework */; };
 		819DEFA3ADECEC6666C14759 /* Pods_OpenLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7728DC34E79B0BEF6EC599 /* Pods_OpenLive.framework */; };
+		9496AE6B26A67ADA004D6BE4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9496AE6A26A67ADA004D6BE4 /* RecordViewController.swift */; };
+		9496AE6D26A6A83C004D6BE4 /* RecorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9496AE6C26A6A83C004D6BE4 /* RecorderManager.swift */; };
+		9496AE7026A6BED2004D6BE4 /* Organ.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9496AE6F26A6BED2004D6BE4 /* Organ.wav */; };
 		A75BF8C822B38B5F0072AF13 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75BF8C722B38B5F0072AF13 /* VideoView.swift */; };
 		A76C267C238657850047E150 /* AGEVideoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C2677238657850047E150 /* AGEVideoLayout.swift */; };
 		A76C267D238657850047E150 /* AGEVideoConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C2678238657850047E150 /* AGEVideoConstraints.swift */; };
@@ -66,6 +69,9 @@
 		8B6FA0F726146E6200A4E4C3 /* AgoraSoundTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraSoundTouch.framework; path = ../../libs/AgoraSoundTouch.framework; sourceTree = "<group>"; };
 		8B6FA0F826146E6200A4E4C3 /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcKit.framework; path = ../../libs/AgoraRtcKit.framework; sourceTree = "<group>"; };
 		8B6FA0F926146E6200A4E4C3 /* AgoraCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraCore.framework; path = ../../libs/AgoraCore.framework; sourceTree = "<group>"; };
+		9496AE6A26A67ADA004D6BE4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		9496AE6C26A6A83C004D6BE4 /* RecorderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderManager.swift; sourceTree = "<group>"; };
+		9496AE6F26A6BED2004D6BE4 /* Organ.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Organ.wav; sourceTree = "<group>"; };
 		A758116724078C4D007EDAD3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A758116A24078C6E007EDAD3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A758116C24078C78007EDAD3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -175,6 +181,8 @@
 		078012EB1D1E57730093DE24 /* OpenLive */ = {
 			isa = PBXGroup;
 			children = (
+				9496AE6F26A6BED2004D6BE4 /* Organ.wav */,
+				9496AE6C26A6A83C004D6BE4 /* RecorderManager.swift */,
 				A7C54A96230BD9EC003D65E3 /* Controllers */,
 				A7C54A95230BD9E4003D65E3 /* Views */,
 				A7C54A93230BD9D6003D65E3 /* Models */,
@@ -257,6 +265,7 @@
 				0790F1251D1E6450003F8C18 /* SettingsViewController.swift */,
 				A7DEDEB0231652B200E34432 /* RoleViewController.swift */,
 				0790F1271D1E645B003F8C18 /* LiveRoomViewController.swift */,
+				9496AE6A26A67ADA004D6BE4 /* RecordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9496AE7026A6BED2004D6BE4 /* Organ.wav in Resources */,
 				A7DEE04F232F735C00E34432 /* README.md in Resources */,
 				078012F71D1E57730093DE24 /* LaunchScreen.storyboard in Resources */,
 				078012F41D1E57730093DE24 /* Assets.xcassets in Resources */,
@@ -474,11 +484,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C54A9A230BE487003D65E3 /* DimensionCell.swift in Sources */,
+				9496AE6D26A6A83C004D6BE4 /* RecorderManager.swift in Sources */,
 				A7DEDEB1231652B200E34432 /* RoleViewController.swift in Sources */,
 				A7DEE04C232F69DC00E34432 /* StatisticsInfo.swift in Sources */,
 				A7C54A98230BE275003D65E3 /* Settings.swift in Sources */,
 				A76C267D238657850047E150 /* AGEVideoConstraints.swift in Sources */,
 				0790F1511D1E9631003F8C18 /* VideoSession.swift in Sources */,
+				9496AE6B26A67ADA004D6BE4 /* RecordViewController.swift in Sources */,
 				078012EF1D1E57730093DE24 /* MainViewController.swift in Sources */,
 				A76C2680238657850047E150 /* AGEVideoContainer.swift in Sources */,
 				078012ED1D1E57730093DE24 /* AppDelegate.swift in Sources */,

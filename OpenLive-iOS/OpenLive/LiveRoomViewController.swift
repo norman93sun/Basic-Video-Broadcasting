@@ -215,6 +215,9 @@ private extension LiveRoomViewController {
         // Step 3, Warning: only enable dual stream mode if there will be more than one broadcaster in the channel
         agoraKit.enableDualStreamMode(true)
         
+        agoraKit.setAudioProfile(.default, scenario: .education)
+//        agoraKit.setAudioProfile(.default, scenario: .gameStreaming)
+
         // Step 4, enable the video module
         agoraKit.enableVideo()
         // set video configuration
